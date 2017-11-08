@@ -22,6 +22,11 @@ import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, I
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
+import { ListshopPage } from '../pages/listshop/listshop';
+import { ListproductPage } from '../pages/listproduct/listproduct';
+import { ProductDetailPage } from '../pages/product-detail/product-detail';
+import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +39,15 @@ import { HttpModule } from '@angular/http';
     SearchPage,
     ProfilePage,
     TabsPage,
+    ListshopPage,
+    ListproductPage,
+    ProductDetailPage,
+    ShopDetailPage,
 
     ListScollXComponent,
+    IonBackgroundImageComponent,
+    IonIconSearchbarComponent,
+    // IonListGridComponent,
     PreloadImage
   ],
   imports: [
@@ -55,7 +67,11 @@ import { HttpModule } from '@angular/http';
     CartPage,
     SearchPage,
     ProfilePage,
-    TabsPage
+    TabsPage,
+    ListshopPage,
+    ListproductPage,
+    ProductDetailPage,
+    ShopDetailPage
   ],
   providers: [
     StatusBar,

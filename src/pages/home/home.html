@@ -1,12 +1,59 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-icon-searchbar (click)="gotoSearchPage()"></ion-icon-searchbar>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div *ngFor="let home of homeData.categories">
-    <list-scoll-x *ngIf="home.popularproducts && home.popularproducts.length > 0" [populars]="home.popularproducts"></list-scoll-x>
+<ion-content>
+  <div no-padding>
+    <ion-segment mode="md" [(ngModel)]="pages">
+      <ion-segment-button *ngFor="let segment of homeData.categories; let i = index;" [ngClass]="{'active-page' : i == pages}"
+        (click)="onSelectedPage(i)">
+        {{ segment.name }}
+      </ion-segment-button>
+    </ion-segment>
   </div>
-
+  <ion-row no-padding>
+    <ion-col col-12>
+      <img class="font-jjgreen" src="./assets/image/thamturakitBG.png">
+      <ion-row no-padding>
+        <ion-col col-12 text-center>
+          <span class="icon-green-text"></span>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <div *ngFor="let segment of homeData.categories; let i = index;" [hidden]="i != pages">
+    <ion-row *ngIf="lastVisit && lastVisit.length > 0" id="rowBest">
+      <ion-col col-12 class="highLight" text-center>
+        <h4>Last Visit</h4>
+      </ion-col>
+      <ion-col col-12 class="grid-product">
+        <list-scoll-x *ngIf="segment.popularproducts && segment.popularproducts.length > 0" [populars]="segment.popularproducts"></list-scoll-x>
+      </ion-col>
+    </ion-row>
+    <!--  -->
+    <ion-row *ngIf="segment.popularshops && segment.popularshops.length > 0" id="rowBest">
+      <ion-col col-12 class="highLight" text-center>
+        <h4>Popular Shops
+          <span (click)="gotoListShop(segment.name)" id="seeall">see all >> </span>
+        </h4>
+      </ion-col>
+      <ion-col col-12>
+        <ion-background-image [items]="segment.popularshops" (itemClicked)="gotoShopDetail($event)"></ion-background-image>
+      </ion-col>
+    </ion-row>
+    <!--  -->
+    <ion-row *ngIf="segment.popularproducts  && segment.popularproducts.length > 0" id="rowProd">
+      <ion-col col-12 class="highLight" text-center>
+        <h4>Popular Products
+          <span (click)="gotoListProduct(segment.name)" id="seeall">see all >> </span>
+        </h4>
+      </ion-col>
+      <ion-col col-12 class="grid-product">
+        <list-scoll-x *ngIf="segment.popularproducts && segment.popularproducts.length > 0" [populars]="segment.popularproducts"></list-scoll-x>
+        <!-- <ion-list-grid [items]="segment.popularproducts" (itemClicked)="gotoProductDetail($event)"></ion-list-grid> -->
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

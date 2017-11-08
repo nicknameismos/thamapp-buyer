@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavController, NavParams } from 'ionic-angular';
 import { HomeService, HomeCategoryModel, ProductItemModel } from "@ngcommerce/core";
+import { ListshopPage } from '../listshop/listshop';
+import { ListproductPage } from '../listproduct/listproduct';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +27,7 @@ export class HomePage {
     // this.loadingCtrl.onLoading();
     this.homeService.getHome().then((data) => {
       this.homeData = data;
-      console.log(this.homeData.categories);
+      console.log(this.homeData);
       // this.loadingCtrl.dismiss();
     }, (error) => {
       console.log(error);
@@ -36,6 +38,17 @@ export class HomePage {
 
   getLastVisit() {
     this.lastVisit = this.homeService.getLastVisit();
+  }
+  onSelectedPage(index) {
+    this.pages = index;
+  }
+
+  gotoListShop(cate) {
+    this.navCtrl.push(ListshopPage, cate);
+  }
+
+  gotoListProduct(cate) {
+    this.navCtrl.push(ListproductPage, cate);
   }
  
 }

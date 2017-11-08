@@ -25,11 +25,12 @@ list-scoll-x {
     $white-c: darken($white, 12%);
     $white-d: darken($white, 24%);
     .horizontal-categories {
-        border-bottom: 10px solid $white-a; // @include element-shadow();
-        @mixin element-shadow($color: $white-d) {
-            box-shadow: inset 0 -0.5px 0 0 #{$color};
-        }
-        padding-bottom: 16px;
+        // border-bottom: 10px solid $white-a; 
+        // @include element-shadow();
+        // @mixin element-shadow($color: $white-d) {
+        //     box-shadow: inset 0 -0.5px 0 0 #{$color};
+        // }
+        // padding-bottom: 16px;
         .scroll-content {
             position: relative;
             contain: style layout;
