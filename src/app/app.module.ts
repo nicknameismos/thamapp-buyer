@@ -12,8 +12,16 @@ import { SearchPage } from '../pages/search/search';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { ListScollXComponent } from '../components/list-scoll-x/list-scoll-x';
+import { PreloadImage } from '../components/preload-image/preload-image';
+
+import { Ionic2RatingModule } from 'ionic2-rating';
+
+import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonDetailProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormShippingComponent, IonFormPaymentComponent, IonFormConfirmComponent, IonFormPaymentOptionComponent, IonFormCreditComponent, IonFormDeliveryComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -25,11 +33,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CartPage,
     SearchPage,
     ProfilePage,
-    TabsPage
+    TabsPage,
+
+    ListScollXComponent,
+    PreloadImage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    Ionic2RatingModule,
+    IonicModule.forRoot(MyApp),
+    EcommerceCoreModule.forRoot('https://thamturakit.herokuapp.com/api/')
   ],
   bootstrap: [IonicApp],
   entryComponents: [
