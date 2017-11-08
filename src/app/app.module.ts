@@ -26,6 +26,7 @@ import { ListshopPage } from '../pages/listshop/listshop';
 import { ListproductPage } from '../pages/listproduct/listproduct';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
+import { WritereviewPage } from '../pages/writereview/writereview';
 
 
 @NgModule({
@@ -43,12 +44,19 @@ import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
     ListproductPage,
     ProductDetailPage,
     ShopDetailPage,
+    WritereviewPage,
 
     ListScollXComponent,
     IonBackgroundImageComponent,
     IonIconSearchbarComponent,
     // IonListGridComponent,
-    PreloadImage
+    PreloadImage,
+    IonListShopComponent,
+    IonListProductComponent,
+    IonDetailShopComponent,
+    IonDetailProductComponent,
+    IonFormReviewComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -71,7 +79,8 @@ import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
     ListshopPage,
     ListproductPage,
     ProductDetailPage,
-    ShopDetailPage
+    ShopDetailPage,
+    WritereviewPage
   ],
   providers: [
     StatusBar,

@@ -10,7 +10,7 @@ page-home {
         position: relative;
         font-size: 1.7rem;
         color: #000;
-        background-color: #9778ca;
+        background-color: #1d7144;
         -webkit-transition: background-color 200ms linear;
         transition: background-color 200ms linear;
       }
@@ -20,17 +20,17 @@ page-home {
         position: relative;
         font-size: 1.7rem;
         color: #000;
-        background-color: #9778ca;
+        background-color: #1d7144;
         -webkit-transition: background-color 200ms linear;
         transition: background-color 200ms linear;
       }
       .toolbar .searchbar-ios .searchbar-input {
-        background: #6e3bc7;
+        background: #52a97a;
         color: white !important;
         // opacity: 0.5;
       }
       .toolbar .searchbar-md .searchbar-input {
-        background: #6e3bc7;
+        background: #52a97a;
         color: white !important;
         // opacity: 0.5;
       }
@@ -87,7 +87,7 @@ page-home {
       .highLight {
         margin-top: 24px !important;
         font-size: 2rem !important;
-        background-color: #558866 !important;
+        background-color: #1d7144 !important;
         color: #fff !important;
         margin-bottom: 22px !important;
         widows: 100% !important;
@@ -219,7 +219,7 @@ page-home {
         display: block;
         overflow-x: scroll !important;
         white-space: nowrap !important;
-        background-color: #9778ca !important;
+        background-color: #1d7144 !important;
         ion-segment-button.segment-button {
             display: inline-block !important;
             min-width: 100px !important;
@@ -234,13 +234,13 @@ page-home {
     }
     .segment-button.active-page {
         color: #ffffff !important;
-        background-color: #6e3bc7 !important;
+        background-color: #52a97a !important;
         border-bottom: 4px solid !important;
       }
       .highLight {
         margin-top: 24px !important;
         font-size: 2rem !important;
-        background-color: #9778ca !important;
+        background-color: #1d7144 !important;
         color: #fff !important;
         margin-bottom: 22px !important;
         widows: 100% !important;

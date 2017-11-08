@@ -9,6 +9,7 @@ import { SearchPage } from '../search/search';
 import { ProfilePage } from '../profile/profile';
 
 @Component({
+  selector: 'page-tabnav',
   templateUrl: 'tabs.html'
 })
 export class TabsPage {

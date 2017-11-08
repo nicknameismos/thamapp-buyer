@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { ListScollXComponent } from './list-scoll-x/list-scoll-x';
-import { PreloadImageComponent } from './preload-image/preload-image';
+import { PreloadImage } from './preload-image/preload-image';
 @NgModule({
 	declarations: [ListScollXComponent,
-    PreloadImageComponent],
+		PreloadImage],
 	imports: [],
 	exports: [ListScollXComponent,
-    PreloadImageComponent]
+		PreloadImage]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

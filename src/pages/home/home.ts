@@ -19,9 +19,13 @@ export class HomePage {
     public navParams: NavParams,
     public homeService: HomeService
   ) {
+
+  }
+  ionViewWillEnter() {
     this.getHomeData();
     this.getLastVisit();
   }
+
   getHomeData() {
     this.pages = '0';
     // this.loadingCtrl.onLoading();
@@ -50,5 +54,5 @@ export class HomePage {
   gotoListProduct(cate) {
     this.navCtrl.push(ListproductPage, cate);
   }
- 
+
 }
