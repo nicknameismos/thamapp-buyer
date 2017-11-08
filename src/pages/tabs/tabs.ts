@@ -1,19 +1,40 @@
 import { Component } from '@angular/core';
-
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
+import { IonicPage, NavController } from 'ionic-angular';
+// import { AboutPage } from '../about/about';
+// import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
+import { FavoritePage } from '../favorite/favorite';
+import { CartPage } from '../cart/cart';
+import { SearchPage } from '../search/search';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  homeRoot = HomePage
+  favoriteRoot = FavoritePage
+  cartRoot = CartPage
+  searchRoot = SearchPage
+  profileRoot = ProfilePage
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
 
+  }
+  countBadgeCart() {
+    // let user = window.localStorage.getItem('jjuser');
+    // let cart = JSON.parse(window.localStorage.getItem('gCart'));
+    // let length = 0;
+    // if (user) {
+
+    //   if (cart && cart.items) {
+    //     let cartLength = cart.items ? cart.items.length : 0;
+    //     for (let i = 0; i < cartLength; i++) {
+    //       length += cart.items[i].qty;
+    //     }
+    //   }
+    // }
+    // return length > 0 ? length.toString() : '';
   }
 }
