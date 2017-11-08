@@ -3,6 +3,8 @@ import { IonicPage, App, NavController, NavParams } from 'ionic-angular';
 import { HomeService, HomeCategoryModel, ProductItemModel } from "@ngcommerce/core";
 import { ListshopPage } from '../listshop/listshop';
 import { ListproductPage } from '../listproduct/listproduct';
+import { ProductDetailPage } from '../product-detail/product-detail';
+import { ShopDetailPage } from '../shop-detail/shop-detail';
 
 @Component({
   selector: 'page-home',
@@ -53,6 +55,14 @@ export class HomePage {
 
   gotoListProduct(cate) {
     this.navCtrl.push(ListproductPage, cate);
+  }
+  
+  gotoProductDetail(e) {
+    this.navCtrl.push(ProductDetailPage, e);
+  }
+
+  gotoShopDetail(e) {
+    this.navCtrl.push(ShopDetailPage, e);
   }
 
 }

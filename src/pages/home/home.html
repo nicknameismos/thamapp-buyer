@@ -28,7 +28,7 @@
         <h4>Last Visit</h4>
       </ion-col>
       <ion-col col-12 class="grid-product">
-        <list-scoll-x [populars]="lastVisit"></list-scoll-x>
+        <list-scoll-x [populars]="lastVisit" (selectedItem)="gotoProductDetail($event)"></list-scoll-x>
       </ion-col>
     </ion-row>
   <div *ngFor="let segment of homeData.categories; let i = index;" [hidden]="i != pages">
@@ -52,7 +52,7 @@
         </h4>
       </ion-col>
       <ion-col col-12 class="grid-product">
-        <list-scoll-x *ngIf="segment.popularproducts && segment.popularproducts.length > 0" [populars]="segment.popularproducts"></list-scoll-x>
+        <list-scoll-x *ngIf="segment.popularproducts && segment.popularproducts.length > 0" [populars]="segment.popularproducts" (selectedItem)="gotoProductDetail($event)"></list-scoll-x>
         <!-- <ion-list-grid [items]="segment.popularproducts" (itemClicked)="gotoProductDetail($event)"></ion-list-grid> -->
       </ion-col>
     </ion-row>
