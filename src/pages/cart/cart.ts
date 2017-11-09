@@ -1,5 +1,9 @@
+import { CartService } from '@ngcommerce/core';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { CartModel, UserModel } from '@ngcommerce/core';
+import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the CartPage page.
@@ -14,12 +18,51 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'cart.html',
 })
 export class CartPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cart = {} as CartModel;
+  user = {} as UserModel;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public cartService: CartService,
+    public app: App,
+    public thamappAuthenService: ThamappAuthenProvider
+  ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CartPage');
+  ionViewWillEnter() {
+    let user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+    this.user = user;
+    if (user) {
+      let cartStorage = JSON.parse(window.localStorage.getItem('gCart'));
+      if (cartStorage) {
+        if (cartStorage.items && cartStorage.items.length > 0) {
+          this.cart = cartStorage;
+          this.onCalculate();
+        }
+      }
+    }
+
+  }
+
+  returnItems(event) {
+    this.onCalculate();
+
+  }
+  onCalculate() {
+    this.cart = this.cartService.onCalculate(this.cart);
+    this.cartService.saveCartStorage(this.cart);
+  }
+
+  gotocheckout(){
+    this.thamappAuthenService.checkTokenUser().then((data) => {
+      alert('ready to go!');
+    }, (err) => {
+      this.showLogInPage();
+    });
+  }
+
+  showLogInPage() {
+    this.navCtrl.push(LoginPage);
   }
 
 }

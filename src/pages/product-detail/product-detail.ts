@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, App } from 'ionic-angular';
 import { ProductModel, ProductService, FavoriteService, CartService } from "@ngcommerce/core";
 import { WritereviewPage } from '../writereview/writereview';
+import { CartPage } from '../cart/cart';
+import { LoginPage } from '../login/login';
+import { TabsPage } from '../tabs/tabs';
+import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
 
 /**
  * Generated class for the ProductDetailPage page.
@@ -23,7 +27,10 @@ export class ProductDetailPage {
     public navParams: NavParams,
     public productService: ProductService,
     public favoriteService: FavoriteService,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public cartService: CartService,
+    public app: App,
+    public thamappAuthenService: ThamappAuthenProvider
   ) {
     this.init();
   }
@@ -80,6 +87,30 @@ export class ProductDetailPage {
       }
     });
     reviewModal.present();
+  }
+
+  addToCart(product) {
+    let user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+
+    if (user) {
+      this.thamappAuthenService.checkTokenUser().then((data) => {
+        this.cartService.addToCart(product);
+        window.localStorage.setItem('selectedTab', '2');
+        this.app.getRootNav().setRoot(TabsPage);
+      }, (err) => {
+        this.cartService.addToCart(product);
+        this.showLogInPage();
+      });
+
+    } else {
+      this.cartService.addToCart(product);
+      this.showLogInPage();
+    }
+  }
+
+  showLogInPage() {
+    // alert('login');
+    this.navCtrl.push(LoginPage);
   }
 
 }

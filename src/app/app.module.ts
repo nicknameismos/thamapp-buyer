@@ -27,6 +27,9 @@ import { ListproductPage } from '../pages/listproduct/listproduct';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 import { WritereviewPage } from '../pages/writereview/writereview';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { ThamappAuthenProvider } from '../providers/thamapp-authen/thamapp-authen';
 
 
 @NgModule({
@@ -45,6 +48,8 @@ import { WritereviewPage } from '../pages/writereview/writereview';
     ProductDetailPage,
     ShopDetailPage,
     WritereviewPage,
+    LoginPage,
+    RegisterPage,
 
     ListScollXComponent,
     IonBackgroundImageComponent,
@@ -55,7 +60,8 @@ import { WritereviewPage } from '../pages/writereview/writereview';
     IonListProductComponent,
     IonDetailShopComponent,
     IonDetailProductComponent,
-    IonFormReviewComponent
+    IonFormReviewComponent,
+    IonListCartComponent
     
   ],
   imports: [
@@ -80,12 +86,15 @@ import { WritereviewPage } from '../pages/writereview/writereview';
     ListproductPage,
     ProductDetailPage,
     ShopDetailPage,
-    WritereviewPage
+    WritereviewPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ThamappAuthenProvider
   ]
 })
 export class AppModule {}

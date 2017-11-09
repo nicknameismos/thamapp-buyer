@@ -38,4 +38,7 @@ export class TabsPage {
     // }
     // return length > 0 ? length.toString() : '';
   }
+  getSelectedTab() {
+    return window.localStorage.getItem('selectedTab');
+  }
 }
