@@ -32,19 +32,7 @@ export class CartPage {
   }
 
   ionViewWillEnter() {
-    this.loadingCtrl.onLoading();
-    let user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
-    this.user = user;
-    if (user) {
-      let cartStorage = JSON.parse(window.localStorage.getItem('gCart'));
-      if (cartStorage) {
-        if (cartStorage.items && cartStorage.items.length > 0) {
-          this.cart = cartStorage;
-          this.onCalculate();
-        }
-      }
-    }
-    this.loadingCtrl.dismiss();
+    this.checkUser();
   }
 
   returnItems(event) {
@@ -56,15 +44,37 @@ export class CartPage {
     this.cartService.saveCartStorage(this.cart);
   }
 
-  gotocheckout() {
+  checkUser() {
     this.loadingCtrl.onLoading();
     this.thamappAuthenService.checkTokenUser().then((data) => {
+      let user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+      this.user = user;
+      if (user) {
+        let cartStorage = JSON.parse(window.localStorage.getItem('gCart'));
+        if (cartStorage) {
+          if (cartStorage.items && cartStorage.items.length > 0) {
+            this.cart = cartStorage;
+            this.onCalculate();
+          }
+        }
+      }
       this.loadingCtrl.dismiss();
-      alert('ready to go!');
+      // alert('ready to go!');
     }, (err) => {
       this.loadingCtrl.dismiss();
       this.showLogInPage();
     });
+  }
+
+  gotocheckout() {
+    // this.loadingCtrl.onLoading();
+    // this.thamappAuthenService.checkTokenUser().then((data) => {
+    //   this.loadingCtrl.dismiss();
+    alert('ready to go!');
+    // }, (err) => {
+    //   this.loadingCtrl.dismiss();
+    //   this.showLogInPage();
+    // });
   }
 
   showLogInPage() {
