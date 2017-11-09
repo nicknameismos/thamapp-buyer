@@ -94,6 +94,45 @@ page-home {
         z-index: 9999 !important;
         height: 38px;
       }
+      .highLight-first {
+        margin-top: 44px !important;
+        margin-left: 5px !important;
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        // background-color: #1d7144 !important;
+        color: #1d7144 !important;
+        margin-bottom: 10px !important;
+        widows: 100% !important;
+        z-index: 9999 !important;
+        height: 38px;
+      }
+      .highLight-sec {
+        margin-top: 30px !important;
+        margin-left: 5px !important;
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        // background-color: #1d7144 !important;
+        color: #1d7144 !important;
+        margin-bottom: 10px !important;
+        widows: 100% !important;
+        z-index: 9999 !important;
+        height: 38px;
+      }
+      .highLight-New {
+        margin-top: 30px !important;
+        margin-left: 5px !important;
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        // background-color: #1d7144 !important;
+        color: #1d7144 !important;
+        margin-bottom: 5px !important;
+        widows: 100% !important;
+        z-index: 9999 !important;
+        height: 38px;
+      }
+      .fontMono{
+        font-family: monospace;
+      }
       h4 {
         margin-top: 1rem !important;
         font-size: 1.8rem;
@@ -106,6 +145,17 @@ page-home {
         background: rgba(0, 0, 0, 0.2);
         padding: 6px;
         margin-top: -4px;
+      }
+      #seeall-New {
+        color: #1d7144;
+        font-size: small;
+        font-weight: 100;
+        font-family: monospace;
+        position: absolute;
+        right: 10px;
+        // background: rgba(0, 0, 0, 0.2);
+        // padding: 6px;
+        top: 10px
       }
       .grid {
         padding: 0px;
