@@ -28,11 +28,13 @@ export class FavoritePage {
     public loadingCtrl: LoadingProvider
   ) {
   }
-
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad FavoritePage');
     this.getListFavorite();
   }
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad FavoritePage');
+  // }
   getListFavorite() {
     let favorites = this.favoriteService.getFavoriteList();
     console.log(favorites);
