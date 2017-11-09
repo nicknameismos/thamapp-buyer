@@ -30,6 +30,7 @@ import { WritereviewPage } from '../pages/writereview/writereview';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ThamappAuthenProvider } from '../providers/thamapp-authen/thamapp-authen';
+import { LoadingProvider } from '../providers/loading/loading';
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import { ThamappAuthenProvider } from '../providers/thamapp-authen/thamapp-authe
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ThamappAuthenProvider
+    ThamappAuthenProvider,
+    LoadingProvider
   ]
 })
 export class AppModule {}

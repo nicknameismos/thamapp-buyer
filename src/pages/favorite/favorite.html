@@ -6,13 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>favorite</ion-title>
+  <ion-navbar color="header-cs">
+    <ion-title>Favorite</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+    <ion-list-product [items]="favorite.items" (selectedProduct)="selectedProduct($event)"></ion-list-product>
 </ion-content>

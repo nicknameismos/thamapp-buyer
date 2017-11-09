@@ -256,4 +256,13 @@ page-home {
         padding: 6px;
         margin-top: -4px;
       }
+      ion-navbar.toolbar {
+        padding: 0px 0px 4px 0px !important;
+      }
+      .item-ios.item-block .item-inner {
+        border-bottom: 0.55px solid #1d7144 !important;
+      }
+      .item-md.item-block .item-inner {
+        border-bottom: 0.55px solid #1d7144 !important;
+      }
 }

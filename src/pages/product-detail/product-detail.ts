@@ -6,6 +6,7 @@ import { CartPage } from '../cart/cart';
 import { LoginPage } from '../login/login';
 import { TabsPage } from '../tabs/tabs';
 import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the ProductDetailPage page.
@@ -30,7 +31,9 @@ export class ProductDetailPage {
     public modalCtrl: ModalController,
     public cartService: CartService,
     public app: App,
-    public thamappAuthenService: ThamappAuthenProvider
+    public thamappAuthenService: ThamappAuthenProvider,
+    public loadingCtrl : LoadingProvider
+    
   ) {
     this.init();
   }
@@ -39,15 +42,15 @@ export class ProductDetailPage {
     console.log('ionViewDidLoad ProductDetailPage');
   }
   init() {
-    // this.loadingCtrl.onLoading();
+    this.loadingCtrl.onLoading();
     this.productService.getProductByID(this.navParams.data._id)
       .then(data => {
         this.product = data;
         this.product.isFavorite = this.isFavoriteService(this.product);
         console.log(this.product);
-        // this.loadingCtrl.dismiss();
+        this.loadingCtrl.dismiss();
       }, err => {
-        // this.loadingCtrl.dismiss();
+        this.loadingCtrl.dismiss();
       });
   }
 
@@ -75,13 +78,13 @@ export class ProductDetailPage {
     let reviewModal = this.modalCtrl.create(WritereviewPage);
     reviewModal.onDidDismiss(data => {
       if (data && data.topic !== '' && data.comment !== '' && data.rate !== '') {
-        // this.loadingCtrl.onLoading();
+        this.loadingCtrl.onLoading();
         this.productService.reviewProduct(this.product._id, data)
           .then((resp) => {
-            // this.loadingCtrl.dismiss();
+            this.loadingCtrl.dismiss();
             this.init();
           }, (err) => {
-            // this.loadingCtrl.dismiss();
+            this.loadingCtrl.dismiss();
             console.error(err);
           });
       }

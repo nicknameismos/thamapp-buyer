@@ -6,10 +6,16 @@ page-writereview {
         &.rating li {
             padding: 0px 0px !important;
             background: none;
-            color: #ffb400;
+            color: #52a97a;
             ion-icon {
                 font-size: 30px;
             }
         }
+    }
+    .ion-md-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-md-star-outline:before{
+        content: "\f1a9" !important;
     }
 }
