@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { regiterModel } from './register.model';
 import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the RegisterPage page.
@@ -22,7 +23,8 @@ export class RegisterPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public thamappAuthenService: ThamappAuthenProvider,
-    public app: App
+    public app: App,
+    public loadingCtrl : LoadingProvider
   ) {
     // alert(this.navParams.data);
     this.user.tel = this.navParams.data;
@@ -33,10 +35,13 @@ export class RegisterPage {
   }
 
   saveAddress() {
+    this.loadingCtrl.onLoading();
     this.thamappAuthenService.regisAndAddress(this.user).then((data) => {
+      this.loadingCtrl.dismiss();
       window.localStorage.setItem('selectedTab', '2');
       this.app.getRootNav().setRoot(TabsPage);
     }, (err) => {
+      this.loadingCtrl.dismiss();
       alert(JSON.parse(err._body).message);
     });
   }

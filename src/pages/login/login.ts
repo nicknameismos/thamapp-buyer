@@ -4,6 +4,7 @@ import { UserModel, AuthenService } from '@ngcommerce/core';
 import { RegisterPage } from '../register/register';
 import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
 import { TabsPage } from '../tabs/tabs';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the LoginPage page.
@@ -25,7 +26,8 @@ export class LoginPage {
     public authenService: AuthenService,
     public platform: Platform,
     public thamappAuthenService: ThamappAuthenProvider,
-    public app: App
+    public app: App,
+    public loadingCtrl : LoadingProvider
   ) {
 
   }
@@ -35,6 +37,7 @@ export class LoginPage {
   }
 
   login(data) {
+    this.loadingCtrl.onLoading();
     this.thamappAuthenService.checkUserByTel(data).then((res) => {
       if (res) {
         let user = {
@@ -52,15 +55,19 @@ export class LoginPage {
           window.localStorage.setItem('selectedTab', '2');
           // setTimeout(function () {
           // this.navCtrl.setRoot(TabsPage);
+          this.loadingCtrl.dismiss();
           this.app.getRootNav().setRoot(TabsPage);
         }, (error) => {
+          this.loadingCtrl.dismiss();
           alert(JSON.parse(error._body).message);
           // this.loadingCtrl.dismiss();
         });
       } else {
+        this.loadingCtrl.dismiss();
         this.register(data);
       }
     }, (err) => {
+      this.loadingCtrl.dismiss();
       alert(JSON.parse(err._body).message);
     });
 

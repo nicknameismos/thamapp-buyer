@@ -96,12 +96,15 @@ export class ProductDetailPage {
     let user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
 
     if (user) {
+      this.loadingCtrl.onLoading();
       this.thamappAuthenService.checkTokenUser().then((data) => {
         this.cartService.addToCart(product);
         window.localStorage.setItem('selectedTab', '2');
+        this.loadingCtrl.dismiss();        
         this.app.getRootNav().setRoot(TabsPage);
       }, (err) => {
         this.cartService.addToCart(product);
+        this.loadingCtrl.dismiss();        
         this.showLogInPage();
       });
 
