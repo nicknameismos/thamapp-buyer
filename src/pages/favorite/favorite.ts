@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FavoriteService, ProductService } from '@ngcommerce/core';
+import { Http } from '@angular/http';
+import { ProductDetailPage } from '../product-detail/product-detail';
 
 /**
  * Generated class for the FavoritePage page.
@@ -14,12 +17,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'favorite.html',
 })
 export class FavoritePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  favorite: any = { items: [] };
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public http: Http,
+    public productService: ProductService,
+    public favoriteService: FavoriteService, ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavoritePage');
+    this.getListFavorite();
+  }
+  getListFavorite() {
+    let favorites = this.favoriteService.getFavoriteList();
+    console.log(favorites);
+    this.favorite = favorites ? favorites : { items: [] };
+  }
+  getListProduct() {
+    this.productService.getProductList().then((data) => {
+      this.favorite = data;
+      console.log(data);
+    }, (error) => {
+      console.error(error);
+    });
+  }
+  selectedProduct(item) {
+    this.navCtrl.push(ProductDetailPage, item);
   }
 
 }
