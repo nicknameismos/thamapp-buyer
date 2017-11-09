@@ -27,6 +27,7 @@ import { ListproductPage } from '../pages/listproduct/listproduct';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 import { WritereviewPage } from '../pages/writereview/writereview';
+import { LoadingProvider } from '../providers/loading/loading';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { WritereviewPage } from '../pages/writereview/writereview';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoadingProvider
   ]
 })
 export class AppModule {}

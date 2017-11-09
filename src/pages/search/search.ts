@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductService, ProductListModel } from '@ngcommerce/core';
 import { Http } from '@angular/http';
 import { ProductDetailPage } from '../product-detail/product-detail';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the SearchPage page.
@@ -24,7 +25,9 @@ export class SearchPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public productService: ProductService,
-    public http: Http, ) {
+    public http: Http,
+    public loadingCtrl : LoadingProvider
+  ) {
   }
 
   ionViewDidLoad() {
@@ -32,11 +35,14 @@ export class SearchPage {
     this.getListProduct();
   }
   getListProduct() {
+    this.loadingCtrl.onLoading();
     this.productService.getProductList().then((data) => {
       this.setDataInfinite(data);
       console.log(data);
+      this.loadingCtrl.dismiss();
     }, (error) => {
       console.error(error);
+      this.loadingCtrl.dismiss();
     });
   }
   setDataInfinite(data) {

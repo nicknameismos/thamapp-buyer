@@ -6,6 +6,7 @@ import { ListproductPage } from '../listproduct/listproduct';
 import { ProductDetailPage } from '../product-detail/product-detail';
 import { ShopDetailPage } from '../shop-detail/shop-detail';
 import { SearchPage } from '../search/search';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,9 @@ export class HomePage {
     public app: App,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public homeService: HomeService
+    public homeService: HomeService,
+    public loadingCtrl : LoadingProvider
+    
   ) {
 
   }
@@ -31,14 +34,14 @@ export class HomePage {
 
   getHomeData() {
     this.pages = '0';
-    // this.loadingCtrl.onLoading();
+    this.loadingCtrl.onLoading();
     this.homeService.getHome().then((data) => {
       this.homeData = data;
       console.log(this.homeData);
-      // this.loadingCtrl.dismiss();
+      this.loadingCtrl.dismiss();
     }, (error) => {
       console.log(error);
-      // this.loadingCtrl.dismiss();
+      this.loadingCtrl.dismiss();
     });
 
   }
