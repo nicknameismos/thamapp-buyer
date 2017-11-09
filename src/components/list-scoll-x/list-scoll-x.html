@@ -1,6 +1,6 @@
 <ion-scroll scrollX="true" class="horizontal-categories">
   <ion-row id="flexWrap">
-    <ion-col col-3 *ngFor="let popular of populars" (click)="_selectedItem(popular)">
+    <ion-col col-4 *ngFor="let popular of populars" (click)="_selectedItem(popular)">
       <ion-thumbnail>
         <preload-image [ratio]="{w:1, h:1}" [src]="popular.image" title="popular.image"></preload-image>
       </ion-thumbnail>
