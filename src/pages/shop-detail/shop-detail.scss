@@ -1,4 +1,23 @@
 page-shop-detail {
+    ul {
+        padding: 0px;
+        margin-top:0px;
+        text-align: left;
+        &.rating li {
+            padding: 0px 0px !important;
+            background: none;
+            color: #52a97a;
+            ion-icon {
+                font-size: 20px;
+            }
+        }
+    }
+    .ion-md-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-md-star-outline:before{
+        content: "\f1a9" !important;
+    }
     .progress-box {
         color: red !important;
         border-spacing: 1px;
@@ -23,19 +42,6 @@ page-shop-detail {
         p {
             ion-row {
                 height: 15px;
-            }
-        }
-    }
-    ul {
-        padding: 0px;
-        margin-top: 0px;
-        text-align: left;
-        &.rating li {
-            padding: 0px 0px !important;
-            background: none;
-            color: #ffb400;
-            ion-icon {
-                font-size: 20px;
             }
         }
     }

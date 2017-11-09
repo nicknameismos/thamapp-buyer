@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,8 +12,39 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+// iconMoon
+@font-face {
+    font-family: 'icomoon-thamturakit';
+    src: url('../assets/fonts/icomoon-thamturakit.eot?xdgxqz');
+    src: url('../assets/fonts/icomoon-thamturakit.eot?xdgxqz#iefix') format('embedded-opentype'), url('../assets/fonts/icomoon-thamturakit.ttf?xdgxqz') format('truetype'), url('../assets/fonts/icomoon-thamturakit.woff?xdgxqz') format('woff'), url('../assets/fonts/icomoon-thamturakit.svg?xdgxqz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
+[class*="icon-green-logo"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon-thamturakit' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: white;
+    font-size: 80px;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
+.icon-green-logo:before {
+    content: "\e188";
+    color: black;
+    font-size: 50px;
+    // font-weight: 100;
+}
+
+//end iconMoon
 // loading
 @keyframes lds-eclipse {
     0% {

@@ -21,7 +21,7 @@ export class LoadingProvider {
       content: `<div class="lds-css ng-scope">
                   <div style="width:100%;height:100%" class="lds-eclipse">
                     <div class="div-image">
-                      <img src="./assets/icon/icon.png" class="loading-image">
+                      <img src="./assets/icon/icon.gif" class="loading-image">
                     </div>
                     <div class="spin">
                     </div>
