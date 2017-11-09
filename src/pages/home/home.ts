@@ -5,6 +5,7 @@ import { ListshopPage } from '../listshop/listshop';
 import { ListproductPage } from '../listproduct/listproduct';
 import { ProductDetailPage } from '../product-detail/product-detail';
 import { ShopDetailPage } from '../shop-detail/shop-detail';
+import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-home',
@@ -64,5 +65,7 @@ export class HomePage {
   gotoShopDetail(e) {
     this.navCtrl.push(ShopDetailPage, e);
   }
-
+  gotoSearchPage(){
+    this.navCtrl.push(SearchPage);
+  }
 }
