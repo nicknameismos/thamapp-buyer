@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { CartModel, UserModel } from '@ngcommerce/core';
 import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
 import { LoginPage } from '../login/login';
+import { CheckoutPage } from '../checkout/checkout';
 import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
@@ -60,7 +61,8 @@ export class CartPage {
     this.loadingCtrl.onLoading();
     this.thamappAuthenService.checkTokenUser().then((data) => {
       this.loadingCtrl.dismiss();
-      alert('ready to go!');
+      // alert('ready to go!');
+      this.navCtrl.push(CheckoutPage)
     }, (err) => {
       this.loadingCtrl.dismiss();
       this.showLogInPage();

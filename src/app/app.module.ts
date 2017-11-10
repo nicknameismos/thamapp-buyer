@@ -33,6 +33,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ThamappAuthenProvider } from '../providers/thamapp-authen/thamapp-authen';
 import { LoadingProvider } from '../providers/loading/loading';
+import { CheckoutPage } from '../pages/checkout/checkout';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { LoadingProvider } from '../providers/loading/loading';
     WritereviewPage,
     LoginPage,
     RegisterPage,
+    CheckoutPage,
 
     ListScollXComponent,
     IonBackgroundImageComponent,
@@ -95,7 +97,8 @@ import { LoadingProvider } from '../providers/loading/loading';
     LoginPage,
     RegisterPage,
     HistoryDetailPage,
-    HistoryPage
+    HistoryPage,
+    CheckoutPage
   ],
   providers: [
     StatusBar,
