@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
-
+import * as firebase from 'firebase';
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,5 +19,17 @@ export class MyApp {
       splashScreen.hide();
     });
     window.localStorage.setItem('selectedTab', '0');
+    this.configFirebase();
+  }
+  configFirebase() {
+    let config = {
+      apiKey: "AIzaSyActRoM7SJW0h20HTM9GrkwJICC4moOzC8",
+      authDomain: "green-vintage.firebaseapp.com",
+      databaseURL: "https://green-vintage.firebaseio.com",
+      projectId: "green-vintage",
+      storageBucket: "green-vintage.appspot.com",
+      messagingSenderId: "317596581774"
+    };
+    firebase.initializeApp(config);
   }
 }

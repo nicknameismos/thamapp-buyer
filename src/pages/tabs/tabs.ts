@@ -1,3 +1,4 @@
+import { HistoryPage } from './../history/history';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 // import { AboutPage } from '../about/about';
@@ -18,7 +19,7 @@ export class TabsPage {
   favoriteRoot = FavoritePage
   cartRoot = CartPage
   searchRoot = SearchPage
-  profileRoot = ProfilePage
+  profileRoot = HistoryPage
 
   constructor(public navCtrl: NavController) {
 

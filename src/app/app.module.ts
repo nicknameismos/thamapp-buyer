@@ -1,3 +1,4 @@
+import { IonUploadImagesComponent } from './../components/ion-upload-image/ion-upload-image';
 import { HistoryPage } from './../pages/history/history';
 import { HistoryDetailPage } from './../pages/history-detail/history-detail';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -33,7 +34,9 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ThamappAuthenProvider } from '../providers/thamapp-authen/thamapp-authen';
 import { LoadingProvider } from '../providers/loading/loading';
-
+import { OrderProvider } from '../providers/order/order';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Base64 } from '@ionic-native/base64';
 
 @NgModule({
   declarations: [
@@ -66,8 +69,9 @@ import { LoadingProvider } from '../providers/loading/loading';
     IonFormReviewComponent,
     IonListCartComponent,
     HistoryDetailPage,
-    HistoryPage
-    
+    HistoryPage,
+    IonUploadImagesComponent
+
   ],
   imports: [
     BrowserModule,
@@ -100,9 +104,12 @@ import { LoadingProvider } from '../providers/loading/loading';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ThamappAuthenProvider,
-    LoadingProvider
+    LoadingProvider,
+    ImagePicker,
+    Base64,
+    OrderProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
