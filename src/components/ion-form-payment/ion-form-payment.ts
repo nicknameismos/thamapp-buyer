@@ -49,9 +49,9 @@ export class IonFormPaymentComponent {
       } else if (this.datapayment.order.payment.paymenttype === 'Cash On Delivery') {
         chk = true;
       } else if (this.datapayment.order.payment.paymenttype === 'Bank Transfer') {
-        if (this.datapayment.order.payment.counterservice) {
+        // if (this.datapayment.order.payment.counterservice) {
           chk = true;
-        }
+        // }
       }
     } else {
       this.datapayment.order.payment.paymenttype = this.channel;

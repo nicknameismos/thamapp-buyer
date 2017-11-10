@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { TabsPage } from './../tabs/tabs';
 
 /**
  * Generated class for the CompletePage page.
@@ -14,12 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'complete.html',
 })
 export class CompletePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  completeOrder: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public app: App) {
+    this.completeOrder = JSON.parse(window.localStorage.getItem('order'));
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompletePage');
   }
-
+  goHome() {
+    localStorage.removeItem('gCart');
+    this.app.getRootNav().setRoot(TabsPage); // set full page
+  }
 }

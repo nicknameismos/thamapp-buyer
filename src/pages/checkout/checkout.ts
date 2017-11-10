@@ -97,11 +97,12 @@ export class CheckoutPage {
     this.datapayment = e;
     // console.log(e);
     // alert('completedPaymentStep');
+    console.log(this.datapayment);
     this.currentstep = 3;
   }
   completedConfirmStep(e) {
     this.dataconfirm = e;
-    // console.log(this.dataconfirm);
+    console.log(this.dataconfirm);
     this.createOrder();
   }
   createOrder() {
