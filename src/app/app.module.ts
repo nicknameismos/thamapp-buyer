@@ -19,7 +19,7 @@ import { PreloadImage } from '../components/preload-image/preload-image';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
-import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonDetailProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormShippingComponent, IonFormPaymentComponent, IonFormConfirmComponent, IonFormPaymentOptionComponent, IonFormCreditComponent, IonFormDeliveryComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
+import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonDetailProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormShippingComponent, IonFormConfirmComponent, IonFormCreditComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,7 +34,12 @@ import { RegisterPage } from '../pages/register/register';
 import { ThamappAuthenProvider } from '../providers/thamapp-authen/thamapp-authen';
 import { LoadingProvider } from '../providers/loading/loading';
 import { CheckoutPage } from '../pages/checkout/checkout';
-
+import { FormAddressPage } from '../pages/form-address/form-address';
+import { CompletePage } from '../pages/complete/complete';
+import { IonFormPaymentComponent } from '../components/ion-form-payment/ion-form-payment';
+import { IonFormPaymentOptionComponent } from '../components/ion-form-paymentoption/ion-form-paymentoption';
+import { IonFormDeliveryComponent } from '../components/ion-form-delivery/ion-form-delivery';
+import { IonFormBankComponent } from '../components/ion-form-bank/ion-form-bank';
 
 @NgModule({
   declarations: [
@@ -55,6 +60,8 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     LoginPage,
     RegisterPage,
     CheckoutPage,
+    FormAddressPage,
+    CompletePage,
 
     ListScollXComponent,
     IonBackgroundImageComponent,
@@ -68,8 +75,21 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     IonFormReviewComponent,
     IonListCartComponent,
     HistoryDetailPage,
-    HistoryPage
-    
+    HistoryPage,
+
+    // Checkout core
+    IonFormWizardComponent,
+    IonFormWizardStepComponent,
+    IonFormShippingComponent,
+    IonFormConfirmComponent,
+    IonFormCreditComponent,
+    IonFormCounterserviceComponent,
+    // Checkout Page
+    IonFormPaymentComponent,
+    IonFormPaymentOptionComponent,
+    IonFormDeliveryComponent,
+    IonFormBankComponent
+
   ],
   imports: [
     BrowserModule,
@@ -98,14 +118,16 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     RegisterPage,
     HistoryDetailPage,
     HistoryPage,
-    CheckoutPage
+    CheckoutPage,
+    FormAddressPage,
+    CompletePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ThamappAuthenProvider,
     LoadingProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
