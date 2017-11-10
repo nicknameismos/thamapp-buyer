@@ -106,12 +106,15 @@ export class CheckoutPage {
     this.createOrder();
   }
   createOrder() {
+    this.loadingCtrl.onLoading();
     this.orderService.createOrder(this.dataconfirm).then((data) => {
       // this.navCtrl.push(CompletePage);
       window.localStorage.setItem('order', JSON.stringify(data));
+      this.loadingCtrl.dismiss();
       this.app.getRootNav().setRoot(CompletePage); // set full page
     }, (error) => {
       console.error(error);
+      this.loadingCtrl.dismiss();
     });
   }
   openFormAddress(e) {
