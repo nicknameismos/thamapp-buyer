@@ -20,7 +20,7 @@ import { PreloadImage } from '../components/preload-image/preload-image';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
-import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonDetailProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormShippingComponent, IonFormPaymentComponent, IonFormConfirmComponent, IonFormPaymentOptionComponent, IonFormCreditComponent, IonFormDeliveryComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
+import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonDetailProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormShippingComponent, IonFormConfirmComponent, IonFormCreditComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,6 +37,13 @@ import { LoadingProvider } from '../providers/loading/loading';
 import { OrderProvider } from '../providers/order/order';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
+import { CheckoutPage } from '../pages/checkout/checkout';
+import { FormAddressPage } from '../pages/form-address/form-address';
+import { CompletePage } from '../pages/complete/complete';
+import { IonFormPaymentComponent } from '../components/ion-form-payment/ion-form-payment';
+import { IonFormPaymentOptionComponent } from '../components/ion-form-paymentoption/ion-form-paymentoption';
+import { IonFormDeliveryComponent } from '../components/ion-form-delivery/ion-form-delivery';
+import { IonFormBankComponent } from '../components/ion-form-bank/ion-form-bank';
 
 @NgModule({
   declarations: [
@@ -56,6 +63,9 @@ import { Base64 } from '@ionic-native/base64';
     WritereviewPage,
     LoginPage,
     RegisterPage,
+    CheckoutPage,
+    FormAddressPage,
+    CompletePage,
 
     ListScollXComponent,
     IonBackgroundImageComponent,
@@ -70,7 +80,20 @@ import { Base64 } from '@ionic-native/base64';
     IonListCartComponent,
     HistoryDetailPage,
     HistoryPage,
-    IonUploadImagesComponent
+    IonUploadImagesComponent,
+
+    // Checkout core
+    IonFormWizardComponent,
+    IonFormWizardStepComponent,
+    IonFormShippingComponent,
+    IonFormConfirmComponent,
+    IonFormCreditComponent,
+    IonFormCounterserviceComponent,
+    // Checkout Page
+    IonFormPaymentComponent,
+    IonFormPaymentOptionComponent,
+    IonFormDeliveryComponent,
+    IonFormBankComponent
 
   ],
   imports: [
@@ -99,7 +122,10 @@ import { Base64 } from '@ionic-native/base64';
     LoginPage,
     RegisterPage,
     HistoryDetailPage,
-    HistoryPage
+    HistoryPage,
+    CheckoutPage,
+    FormAddressPage,
+    CompletePage
   ],
   providers: [
     StatusBar,
