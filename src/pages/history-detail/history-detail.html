@@ -23,14 +23,14 @@
           <img src="{{itm.product.images ? itm.product.images[0] : 'no image'}}">
         </ion-thumbnail>
         <h2>{{itm.product.name}}</h2>
-        <p>ราคา : {{itm.product.promotionprice}}</p>
+        <p>ราคา : {{itm.product.promotionprice}} {{itm.product.currency}}</p>
         <p>จำนวน : {{itm.qty}}</p>
-        <p>รวม : {{itm.amount - itm.discount}}</p>
+        <p>รวม : {{itm.amount - itm.discount}} {{itm.product.currency}}</p>
         <button ion-button clear item-right></button>
       </ion-item>
     </ion-list>
   </div>
-  <p>ราคาสุทธิ : {{item.totalamount}}</p>
+  <h3 text-right>ราคาสุทธิ : {{item.totalamount}} THB</h3>
   <div *ngIf="item.isTransfer">
     <ion-upload-images [maximumImagesCount]="1" [images]="pImages" [isShowUpload]="false" (resImage)="resImageEvent($event)"></ion-upload-images>
     <button ion-button block [disabled]="resImg == ''" (click)="upLoadSlip()">upload slip</button>
