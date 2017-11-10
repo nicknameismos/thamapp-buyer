@@ -24,6 +24,7 @@ export class CompletePage {
     console.log('ionViewDidLoad CompletePage');
   }
   goHome() {
+    window.localStorage.setItem('selectedTab', '0');
     localStorage.removeItem('gCart');
     this.app.getRootNav().setRoot(TabsPage); // set full page
   }
