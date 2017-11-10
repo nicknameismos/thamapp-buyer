@@ -32,7 +32,7 @@ export class ThamappAuthenProvider {
       .toPromise()
       .then((response) => {
         let res = response.json() as UserModel;
-        window.localStorage.setItem('token', JSON.stringify(res.loginToken));
+        window.localStorage.setItem('token', res.loginToken);
         window.localStorage.setItem('thamappbuyer', JSON.stringify(res));
         return res;
       })
@@ -40,6 +40,7 @@ export class ThamappAuthenProvider {
   };
 
   checkTokenUser() {
+
     let headers = this.corService.createAuthorizationHeader();
     return this.http.get(Constants.URL + 'checkexpireuser/', { headers: headers })
       .toPromise()
