@@ -42,16 +42,10 @@ export class IonFormPaymentComponent {
     this.datapayment = this.datashipping;
     let chk = false;
     if (this.datapayment.order && this.datapayment.order.payment && this.datapayment.order.payment.paymenttype) {
-      if (this.datapayment.order.payment.paymenttype === 'Credit Card') {
-        if (this.datapayment.order.payment.creditno && this.datapayment.order.payment.creditname && this.datapayment.order.payment.expdate && this.datapayment.order.payment.creditcvc) {
-          chk = true;
-        }
-      } else if (this.datapayment.order.payment.paymenttype === 'Cash On Delivery') {
+      if (this.datapayment.order.payment.paymenttype === 'Cash On Delivery') {
         chk = true;
       } else if (this.datapayment.order.payment.paymenttype === 'Bank Transfer') {
-        // if (this.datapayment.order.payment.counterservice) {
-          chk = true;
-        // }
+        chk = true;
       }
     } else {
       this.datapayment.order.payment.paymenttype = this.channel;
