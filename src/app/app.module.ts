@@ -1,3 +1,5 @@
+import { HistoryPage } from './../pages/history/history';
+import { HistoryDetailPage } from './../pages/history-detail/history-detail';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -62,7 +64,9 @@ import { LoadingProvider } from '../providers/loading/loading';
     IonDetailShopComponent,
     IonDetailProductComponent,
     IonFormReviewComponent,
-    IonListCartComponent
+    IonListCartComponent,
+    HistoryDetailPage,
+    HistoryPage
     
   ],
   imports: [
@@ -89,7 +93,9 @@ import { LoadingProvider } from '../providers/loading/loading';
     ShopDetailPage,
     WritereviewPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    HistoryDetailPage,
+    HistoryPage
   ],
   providers: [
     StatusBar,
