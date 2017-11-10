@@ -16,10 +16,10 @@ import { ProfilePage } from '../profile/profile';
 export class TabsPage {
 
   homeRoot = HomePage
-  favoriteRoot = FavoritePage
+  favoriteRoot = HistoryPage
   cartRoot = CartPage
   searchRoot = SearchPage
-  profileRoot = HistoryPage
+  profileRoot = ProfilePage
 
   constructor(public navCtrl: NavController) {
 
