@@ -44,6 +44,8 @@ import { IonFormPaymentComponent } from '../components/ion-form-payment/ion-form
 import { IonFormPaymentOptionComponent } from '../components/ion-form-paymentoption/ion-form-paymentoption';
 import { IonFormDeliveryComponent } from '../components/ion-form-delivery/ion-form-delivery';
 import { IonFormBankComponent } from '../components/ion-form-bank/ion-form-bank';
+import { NotificationPage } from '../pages/notification/notification';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 @NgModule({
   declarations: [
@@ -80,7 +82,10 @@ import { IonFormBankComponent } from '../components/ion-form-bank/ion-form-bank'
     IonListCartComponent,
     HistoryDetailPage,
     HistoryPage,
+    NotificationPage,
+    EditProfilePage,
     IonUploadImagesComponent,
+    IonFormProfileComponent,
 
     // Checkout core
     IonFormWizardComponent,
@@ -125,7 +130,9 @@ import { IonFormBankComponent } from '../components/ion-form-bank/ion-form-bank'
     HistoryPage,
     CheckoutPage,
     FormAddressPage,
-    CompletePage
+    CompletePage,
+    NotificationPage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,

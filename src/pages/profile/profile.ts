@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserModel, AuthenService } from "@ngcommerce/core";
+import { NotificationPage } from '../notification/notification';
+import { EditProfilePage } from '../edit-profile/edit-profile';
+import { LoginPage } from './../login/login';
 
 /**
  * Generated class for the ProfilePage page.
@@ -14,12 +18,55 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userProfile = {} as UserModel;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public authenService: AuthenService
+  ) {
+    
+  }
+  ionViewWillEnter() {
+    this.userProfile = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+    this.isSetting();
+    this.isNoti();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  logout(e) {
+    window.localStorage.removeItem('thamappbuyer');
+    this.userProfile = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+    this.isSetting();
+    this.isNoti();
+  }
+
+  notification(e) {
+    this.navCtrl.push(NotificationPage);
+  }
+
+  loginModal(e) {
+    this.navCtrl.push(LoginPage);
+  }
+
+  editProfile(e) {
+    this.navCtrl.push(EditProfilePage);
+  }
+
+  isSetting() {
+    let user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+    if (user) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isNoti() {
+    let noti = JSON.parse(window.localStorage.getItem('onNotifications'));
+    if (noti) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }
