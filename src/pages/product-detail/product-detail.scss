@@ -138,4 +138,13 @@ page-product-detail {
         color: #ff0000;
         font-size: 16px;
     }
+    ion-content {
+        margin-top: -56px;
+    }
+    // .header-md::after {
+    //     background-image: none;
+    // }
+    .back-button {
+        color: rgb(194, 194, 194);
+    }    
 }
