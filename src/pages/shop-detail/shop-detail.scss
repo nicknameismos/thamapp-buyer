@@ -4,7 +4,7 @@ page-shop-detail {
     }
     ul {
         padding: 0px;
-        margin-top:0px;
+        margin-top: 0px;
         text-align: left;
         &.rating li {
             padding: 0px 0px !important;
@@ -18,13 +18,13 @@ page-shop-detail {
     .ion-ios-star:before {
         content: "\f1aa" !important;
     }
-    .ion-ios-star-outline:before{
+    .ion-ios-star-outline:before {
         content: "\f1a9" !important;
     }
     .ion-md-star:before {
         content: "\f1aa" !important;
     }
-    .ion-md-star-outline:before{
+    .ion-md-star-outline:before {
         content: "\f1a9" !important;
     }
     .progress-box {
@@ -55,12 +55,13 @@ page-shop-detail {
         }
     }
     #wrap {
-        background-color: #1d7144;
+        background-color: #2A5D67;
         position: absolute;
         color: white;
         padding-left: 7px;
         height: 115px;
         width: 100%;
+        opacity: 0.9;
     }
     #btnCall {
         margin: 0;
@@ -113,6 +114,13 @@ page-shop-detail {
         padding-top: 8px;
     }
     .list-md {
-        margin: 0px 0 16px;
+        margin: 0px 0 16px !important;
+    }
+    .item-divider-ios {
+        padding-left: 16px;
+        border-bottom: 1px solid #dedede;
+        font-size: 1.4rem;
+        color: #858585;
+        background-color: #fff;
     }
 }
