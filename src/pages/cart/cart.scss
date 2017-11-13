@@ -1,4 +1,7 @@
 page-cart {
+    img {
+        object-fit: cover !important;
+    }
     background-color: white;
     .ion-content-active {
         height: 60% !important;

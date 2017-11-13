@@ -1,4 +1,7 @@
 page-checkout {
+    img {
+        object-fit: cover !important;
+    }
     #hContent {
         margin-top: 110px; //    height: 80%;
     }
