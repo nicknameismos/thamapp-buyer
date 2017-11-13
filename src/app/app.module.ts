@@ -47,6 +47,8 @@ import { IonFormBankComponent } from '../components/ion-form-bank/ion-form-bank'
 import { NotificationPage } from '../pages/notification/notification';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
+import { OneSignal } from '@ionic-native/onesignal';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -142,7 +144,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     LoadingProvider,
     ImagePicker,
     Base64,
-    OrderProvider
+    OrderProvider,
+    OneSignal
   ]
 })
 export class AppModule { }

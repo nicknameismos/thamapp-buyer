@@ -5,6 +5,8 @@ import { RegisterPage } from '../register/register';
 import { ThamappAuthenProvider } from '../../providers/thamapp-authen/thamapp-authen';
 import { TabsPage } from '../tabs/tabs';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { OneSignal } from '@ionic-native/onesignal';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -27,7 +29,8 @@ export class LoginPage {
     public platform: Platform,
     public thamappAuthenService: ThamappAuthenProvider,
     public app: App,
-    public loadingCtrl : LoadingProvider
+    public loadingCtrl : LoadingProvider,
+    private oneSignal: OneSignal    
   ) {
 
   }
@@ -48,9 +51,9 @@ export class LoginPage {
         this.authenService.signIn(user).then((data) => {
           window.localStorage.setItem('thamappbuyer', JSON.stringify(data));
           if (this.platform.is('cordova')) {
-            // this.oneSignal.getIds().then((data) => {
-            //   this.authenService.pushNotificationUser({ id: data.userId });
-            // });
+            this.oneSignal.getIds().then((data) => {
+              this.authenService.pushNotificationUser({ id: data.userId });
+            });
           }
           window.localStorage.setItem('selectedTab', '2');
           // setTimeout(function () {
