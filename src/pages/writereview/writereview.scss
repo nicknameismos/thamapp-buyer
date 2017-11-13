@@ -15,6 +15,12 @@ page-writereview {
             }
         }
     }
+    .ion-ios-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-ios-star-outline:before{
+        content: "\f1a9" !important;
+    }
     .ion-md-star:before {
         content: "\f1aa" !important;
     }

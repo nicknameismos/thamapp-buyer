@@ -37,6 +37,18 @@ page-listproduct {
             }
         }
     }
+    .ion-ios-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-ios-star-outline:before{
+        content: "\f1a9" !important;
+    }
+    .ion-md-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-md-star-outline:before{
+        content: "\f1a9" !important;
+    }
     #price{
         text-decoration: line-through;
         color: #bdbdbd;

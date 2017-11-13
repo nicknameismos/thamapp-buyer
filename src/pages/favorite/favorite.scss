@@ -32,6 +32,18 @@ page-favorite {
             }
         }
     }
+    .ion-ios-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-ios-star-outline:before{
+        content: "\f1a9" !important;
+    }
+    .ion-md-star:before {
+        content: "\f1aa" !important;
+    }
+    .ion-md-star-outline:before{
+        content: "\f1a9" !important;
+    }
     .item-ios p {
         overflow: inherit;
         font-size: 1.4rem;
