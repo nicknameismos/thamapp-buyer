@@ -13,6 +13,9 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 // iconMoon
+img {
+    object-fit: cover !important;
+}
 @font-face {
     font-family: 'icomoon-thamturakit';
     src: url('../assets/fonts/icomoon-thamturakit.eot?xdgxqz');
