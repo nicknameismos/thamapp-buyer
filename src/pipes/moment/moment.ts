@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import * as moment from 'moment';
-import { Constants } from "../../app/app.contant";
 moment.locale('th-th');
 /**
  * Generated class for the MomentPipe pipe.
