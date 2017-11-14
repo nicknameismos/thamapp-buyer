@@ -30,7 +30,7 @@ export class SearchPage {
   ) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad SearchPage');
     this.getListProduct();
   }

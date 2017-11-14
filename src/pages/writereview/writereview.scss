@@ -15,6 +15,18 @@ page-writereview {
             }
         }
     }
+    .button-md {
+        background-color: #5c926e;
+      }
+      .button-md.activated {
+        background-color: #699b7a;
+      }
+      .button-ios {
+        background-color: #5c926e;
+      }
+      .button-ios.activated {
+        background-color: #699b7a;
+      }
     .ion-ios-star:before {
         content: "\f1aa" !important;
     }

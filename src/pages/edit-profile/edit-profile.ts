@@ -24,8 +24,10 @@ export class EditProfilePage {
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingProvider
   ) {
+    this.loadingCtrl.onLoading();
     this.editProfile = JSON.parse(window.localStorage.getItem('thamappbuyer'));
     console.log(this.editProfile);
+    this.loadingCtrl.dismiss();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditProfilePage');

@@ -4,6 +4,7 @@ import { UserModel, AuthenService } from "@ngcommerce/core";
 import { NotificationPage } from '../notification/notification';
 import { EditProfilePage } from '../edit-profile/edit-profile';
 import { LoginPage } from './../login/login';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the ProfilePage page.
@@ -22,14 +23,17 @@ export class ProfilePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public loadingCtrl : LoadingProvider,
     public authenService: AuthenService
   ) {
     
   }
   ionViewWillEnter() {
+    this.loadingCtrl.onLoading();
     this.userProfile = JSON.parse(window.localStorage.getItem('thamappbuyer'));
     this.isSetting();
     this.isNoti();
+    this.loadingCtrl.dismiss();
   }
 
   logout(e) {
