@@ -42,6 +42,7 @@ export class HistoryDetailPage {
     this.loadingCtrl.onLoading();
     this.orderService.getOrderByID(this.navParams.data).then((data) => {
       this.item = data;
+      console.log(this.item);
       this.loadingCtrl.dismiss();
       console.log(this.item);
     }, (err) => {

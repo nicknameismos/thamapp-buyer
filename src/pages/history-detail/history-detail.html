@@ -14,7 +14,9 @@
 
 
 <ion-content padding>
-  <p>วันที่ซื้อ : {{item.created | date: 'dd/MM/yyyy'}}</p>
+  <p>วันที่ซื้อ : {{item.created | moment: 'LL'}}</p>
+  <!-- <p>วันที่ซื้อ : {{item.created | date: 'dd/MM/yyyy'}}</p> -->
+  
   <p>สถานะการสั่งซื้อ : {{item.status}}</p>
   <div>
     <ion-list>

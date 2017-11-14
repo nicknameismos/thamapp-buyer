@@ -48,7 +48,7 @@ import { NotificationPage } from '../pages/notification/notification';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 import { OneSignal } from '@ionic-native/onesignal';
-
+import { MomentPipe } from "../pipes/moment/moment";
 @NgModule({
   declarations: [
     MyApp,
@@ -100,15 +100,16 @@ import { OneSignal } from '@ionic-native/onesignal';
     IonFormPaymentComponent,
     IonFormPaymentOptionComponent,
     IonFormDeliveryComponent,
-    IonFormBankComponent
-
+    IonFormBankComponent,
+    //pipe moment
+    MomentPipe
   ],
   imports: [
     BrowserModule,
     HttpModule,
     Ionic2RatingModule,
     IonicModule.forRoot(MyApp),
-    EcommerceCoreModule.forRoot('https://thamturakit.herokuapp.com/api/')
+    EcommerceCoreModule.forRoot('https://thamturakit.herokuapp.com/api/'),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
