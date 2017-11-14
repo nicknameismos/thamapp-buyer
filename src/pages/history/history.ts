@@ -1,3 +1,5 @@
+import { LoginPage } from './../login/login';
+import { ThamappAuthenProvider } from './../../providers/thamapp-authen/thamapp-authen';
 import { HistoryDetailPage } from './../history-detail/history-detail';
 import { LoadingProvider } from './../../providers/loading/loading';
 import { OrderProvider } from './../../providers/order/order';
@@ -26,15 +28,15 @@ export class HistoryPage {
     public navParams: NavParams,
     public orderService: OrderProvider,
     public loadingCtrl: LoadingProvider,
-    public app: App
+    public app: App,
+    public thamappAuthenService: ThamappAuthenProvider,
+
   ) {
     this.user = JSON.parse(window.localStorage.getItem('thamappbuyer'));
   }
 
   ionViewWillEnter() {
-    if (this.user) {
-      this.getHistory();
-    }
+    this.gotocheckout();
   }
   getHistory() {
     this.loadingCtrl.onLoading();
@@ -48,8 +50,28 @@ export class HistoryPage {
     });
 
   }
+
+  gotocheckout() {
+    this.loadingCtrl.onLoading();
+    this.thamappAuthenService.checkTokenUser().then((data) => {
+      this.loadingCtrl.dismiss();
+      // alert('ready to go!');
+      this.getHistory();
+
+      // this.navCtrl.push(CheckoutPage)
+    }, (err) => {
+      this.loadingCtrl.dismiss();
+      // this.showLogInPage();
+      this.order = [];
+      this.user = undefined;
+    });
+  }
+
   detailHistory(item) {
     this.navCtrl.push(HistoryDetailPage, item);
   }
 
+  showLogInPage() {
+    this.navCtrl.push(LoginPage);
+  }
 }

@@ -10,3 +10,4 @@ ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIB
 npm install --save @ionic-native/image-picker
 ionic cordova plugin add onesignal-cordova-plugin --save
 npm install --save @ionic-native/onesignal
+npm install moment --save

@@ -14,6 +14,11 @@
 
 
 <ion-content>
+  <div *ngIf="!user" text-center (click)="showLogInPage()">
+    <ion-icon class="lock color-gray-lock" name="ios-lock-outline"></ion-icon>
+    <p class="color-gray-lock font-lock-size">Please login</p>
+    <p class="color-gray-lock font-lock-size">Click here to login!</p>
+  </div>
   <ion-list>
     <ion-item *ngFor="let item of order" (click)="detailHistory(item._id)">
       <ion-avatar item-left>
