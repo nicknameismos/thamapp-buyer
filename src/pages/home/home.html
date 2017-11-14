@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-navbar>
+  <!-- <ion-navbar>
     <ion-icon-searchbar (click)="gotoSearchPage()"></ion-icon-searchbar>
+  </ion-navbar> -->
+  <ion-navbar color="header-cs">
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -24,18 +27,18 @@
     </ion-col>
   </ion-row>
   <ion-row *ngIf="lastVisit && lastVisit.length > 0" id="rowBest">
-      <!-- <ion-col col-12 class="highLight" text-center>
+    <!-- <ion-col col-12 class="highLight" text-center>
         <h4>Last Visit</h4>
       </ion-col> -->
-      <ion-col col-12 class="highLight-first">
-        <h4 class="fontMono">สินค้าที่เข้าชมล่าสุด</h4>
-      </ion-col>
-      <ion-col col-12 class="grid-product">
-        <list-scoll-x [populars]="lastVisit" (selectedItem)="gotoProductDetail($event)"></list-scoll-x>
-      </ion-col>
-    </ion-row>
+    <ion-col col-12 class="highLight-first">
+      <h4 class="fontMono">สินค้าที่เข้าชมล่าสุด</h4>
+    </ion-col>
+    <ion-col col-12 class="grid-product">
+      <list-scoll-x [populars]="lastVisit" (selectedItem)="gotoProductDetail($event)"></list-scoll-x>
+    </ion-col>
+  </ion-row>
   <div *ngFor="let segment of homeData.categories; let i = index;" [hidden]="i != pages">
-    
+
     <!--  -->
     <ion-row *ngIf="segment.popularshops && segment.popularshops.length > 0" id="rowBest">
       <!-- <ion-col col-12 class="highLight" text-center>
@@ -45,7 +48,10 @@
       </ion-col> -->
       <ion-col col-12 class="highLight-New">
         <h4 class="fontMono">ร้านค้ายอดนิยม</h4>
-        <span (click)="gotoListShop(segment.name)" id="seeall-New">ดูทั้งหมด >> </span>
+
+        <button id="seeall-New" ion-button small color="header-cs" (click)="gotoListShop(segment.name)">ดูทั้งหมด</button>
+
+        <!-- <span (click)="gotoListShop(segment.name)" id="seeall-New">ดูทั้งหมด >> </span> -->
       </ion-col>
       <ion-col col-12>
         <ion-background-image [items]="segment.popularshops" (itemClicked)="gotoShopDetail($event)"></ion-background-image>
@@ -60,10 +66,13 @@
       </ion-col> -->
       <ion-col col-12 class="highLight-sec">
         <h4 class="fontMono">สินค้ายอดนิยม</h4>
-        <span (click)="gotoListProduct(segment.name)" id="seeall-New">ดูทั้งหมด >> </span>
+        <button id="seeall-New" ion-button small color="header-cs" (click)="gotoListProduct(segment.name)">ดูทั้งหมด</button>
+
+        <!-- <span (click)="gotoListProduct(segment.name)" id="seeall-New">ดูทั้งหมด >> </span> -->
       </ion-col>
       <ion-col col-12 class="grid-product">
-        <list-scoll-x *ngIf="segment.popularproducts && segment.popularproducts.length > 0" [populars]="segment.popularproducts" (selectedItem)="gotoProductDetail($event)"></list-scoll-x>
+        <list-scoll-x *ngIf="segment.popularproducts && segment.popularproducts.length > 0" [populars]="segment.popularproducts"
+          (selectedItem)="gotoProductDetail($event)"></list-scoll-x>
         <!-- <ion-list-grid [items]="segment.popularproducts" (itemClicked)="gotoProductDetail($event)"></ion-list-grid> -->
       </ion-col>
     </ion-row>
