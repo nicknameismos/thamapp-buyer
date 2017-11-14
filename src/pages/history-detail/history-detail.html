@@ -33,6 +33,6 @@
   <h3 text-right>ราคาสุทธิ : {{item.totalamount}} THB</h3>
   <div *ngIf="item.isTransfer">
     <ion-upload-images [maximumImagesCount]="1" [images]="pImages" [isShowUpload]="false" (resImage)="resImageEvent($event)"></ion-upload-images>
-    <button ion-button block [disabled]="resImg == ''" (click)="upLoadSlip()">upload slip</button>
+    <button ion-button block color="submit" [disabled]="resImg == ''" (click)="upLoadSlip()">upload slip</button>
   </div>
 </ion-content>

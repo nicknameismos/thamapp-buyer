@@ -198,6 +198,16 @@ page-checkout {
         margin: 0.4rem 0.2rem;
         padding: 0 1.1em;
     }
+    .button-md.activated{
+        background-color: #5c926e;
+    }
+    .button-ios-danger.activated{
+        background-color: #5c926e;
+    }
+    .button-ios.activated {
+        background-color: #5c926e;
+        opacity: 1;
+    }
     #shippingMethod-col {
         background-color: #f4f4f4;
     }

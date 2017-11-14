@@ -149,5 +149,11 @@ page-product-detail {
     // }
     .back-button {
         color: rgb(194, 194, 194);
-    }    
+    }   
+    .button-outline-ios.activated{
+        background-color:transparent;
+        opacity: 1;
+        box-shadow: none;
+        color: #488aff;
+    } 
 }
