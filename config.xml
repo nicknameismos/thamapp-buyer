@@ -87,4 +87,8 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="onesignal-cordova-plugin" spec="^2.2.2" />
+    <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
+        <variable name="APP_ID" value="311028459373206" />
+        <variable name="APP_NAME" value="thamappbuyer" />
+    </plugin>
 </widget>

@@ -19,15 +19,29 @@ import { LoadingProvider } from '../../providers/loading/loading';
 })
 export class RegisterPage {
   user: regiterModel = new regiterModel();
+  isFacebook: boolean = false;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public thamappAuthenService: ThamappAuthenProvider,
     public app: App,
-    public loadingCtrl : LoadingProvider
+    public loadingCtrl: LoadingProvider
   ) {
     // alert(this.navParams.data);
-    this.user.tel = this.navParams.data;
+    if (this.navParams.data && this.navParams.data !== undefined) {
+      this.user.tel = this.navParams.data;
+    }
+
+    if (this.navParams.get('facebook') && this.navParams.get('facebook') !== undefined) {
+      let user = this.navParams.get('facebook');
+      this.user.firstName = user.first_name;
+      this.user.lastName = user.last_name;
+      this.user.email = user.email;
+      this.user.profileImageURL = user.picture.data.url;
+      this.user.tel = '';
+      this.isFacebook = true;
+      this.user.isFacebook = true;
+    }
   }
 
   ionViewDidLoad() {

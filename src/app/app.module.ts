@@ -49,6 +49,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 import { OneSignal } from '@ionic-native/onesignal';
 import { MomentPipe } from "../pipes/moment/moment";
+import { Facebook } from '@ionic-native/facebook';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -146,7 +148,8 @@ import { MomentPipe } from "../pipes/moment/moment";
     ImagePicker,
     Base64,
     OrderProvider,
-    OneSignal
+    OneSignal,
+    Facebook
   ]
 })
 export class AppModule { }

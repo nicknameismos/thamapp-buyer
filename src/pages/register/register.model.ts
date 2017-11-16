@@ -7,4 +7,7 @@ export class regiterModel {
     province: string;
     postcode: string;
     tel: string;
+    email: string;
+    profileImageURL: string;
+    isFacebook: boolean;
 }
