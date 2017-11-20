@@ -17,6 +17,8 @@ import { LoadingProvider } from '../../providers/loading/loading';
 })
 export class EditProfilePage {
   editProfile = {} as UserModel;
+  pImages: Array<string> = [];
+  resImg: string = '';
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,14 +28,20 @@ export class EditProfilePage {
   ) {
     this.loadingCtrl.onLoading();
     this.editProfile = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+    this.pImages = this.editProfile.profileImageURL ? [this.editProfile.profileImageURL] : [];
     console.log(this.editProfile);
     this.loadingCtrl.dismiss();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditProfilePage');
   }
+  resImageEvent(e) {
+    this.resImg = e[0] ? e[0] : "";
+    // this.resImg = './assets/image/noimage.png';
+  }
   editAccount() {
     this.loadingCtrl.onLoading();
+    this.editProfile.profileImageURL = this.resImg;
     this.authenService.updateUser(this.editProfile).then((resp) => {
       window.localStorage.setItem('thamappbuyer', JSON.stringify(resp));
       this.navCtrl.pop();
