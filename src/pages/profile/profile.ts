@@ -65,7 +65,7 @@ export class ProfilePage {
   }
 
   isNoti() {
-    let noti = JSON.parse(window.localStorage.getItem('onNotifications'));
+    let noti = JSON.parse(window.localStorage.getItem('buyerNotification'));
     if (noti) {
       return true;
     } else {

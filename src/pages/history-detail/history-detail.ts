@@ -27,6 +27,8 @@ export class HistoryDetailPage {
     public orderService: OrderProvider,
     public loadingCtrl: LoadingProvider
   ) {
+    // this.item = JSON.parse(window.localStorage.getItem('thamappbuyer'));
+    // this.pImages = this.editProfile.profileImageURL ? [this.editProfile.profileImageURL] : [];
     this.getHistory();
   }
 
@@ -42,7 +44,11 @@ export class HistoryDetailPage {
     this.loadingCtrl.onLoading();
     this.orderService.getOrderByID(this.navParams.data).then((data) => {
       this.item = data;
-      console.log(this.item);
+      // this.item.items.forEach(product => {
+      //   if (product) {
+      //     this.pImages = product.product.images ? JSON.parse(JSON.stringify(product.product.images)) : [];
+      //   }
+      // });
       this.loadingCtrl.dismiss();
       console.log(this.item);
     }, (err) => {
