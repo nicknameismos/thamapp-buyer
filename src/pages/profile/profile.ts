@@ -65,8 +65,9 @@ export class ProfilePage {
   }
 
   isNoti() {
+    this.userProfile = JSON.parse(window.localStorage.getItem('thamappbuyer'));
     let noti = JSON.parse(window.localStorage.getItem('buyerNotification'));
-    if (noti) {
+    if (noti && this.userProfile) {
       return true;
     } else {
       return false;
