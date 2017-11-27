@@ -70,8 +70,8 @@ export class IonFormShippingComponent {
       });
       if (this.data.order.items.length === this.listshipping.items.length) {
         this.data.order.items.forEach(itm => {
-          this.deli += itm.delivery.shippingprice || 0;
-          this.listshipping.totalamount = (this.listshipping.totalamount) += itm.delivery.shippingprice || 0;
+          this.deli += itm.delivery.price || 0;
+          this.listshipping.totalamount = (this.listshipping.totalamount) += itm.delivery.price || 0;
         });
       }
     }
@@ -82,7 +82,7 @@ export class IonFormShippingComponent {
       if (this.data.order.items.length === this.listshipping.items.length) {
         this.data.order.items.forEach(itm => {
           console.log(itm);
-          this.data.order.deliveryprice += itm.delivery.shippingprice || 0;
+          this.data.order.deliveryprice += itm.delivery.price || 0;
           this.data.order.discount += itm.discount || 0;
           this.data.order.amount += itm.amount || 0;
           this.data.order.totalamount += itm.afterdiscount || 0;
