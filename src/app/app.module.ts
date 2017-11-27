@@ -20,7 +20,7 @@ import { PreloadImage } from '../components/preload-image/preload-image';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
-import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormShippingComponent, IonFormConfirmComponent, IonFormCreditComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
+import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormCreditComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -51,6 +51,8 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { MomentPipe } from "../pipes/moment/moment";
 import { Facebook } from '@ionic-native/facebook';
 import { IonDetailProductComponent } from '../components/ion-detail-product/ion-detail-product';
+import { IonFormShippingComponent } from '../components/ion-form-shipping/ion-form-shipping';
+import { IonFormConfirmComponent } from '../components/ion-form-confirm/ion-form-confirm';
 
 @NgModule({
   declarations: [

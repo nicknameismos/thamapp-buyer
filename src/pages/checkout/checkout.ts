@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, App } from 'ionic-angular';
-import { CheckoutModel, PaymentModel, ListAddressModel, CartService, AddressService, PaymentService, OrderService } from "@ngcommerce/core";
+import { PaymentModel, ListAddressModel, CartService, AddressService, PaymentService, OrderService } from "@ngcommerce/core";
 import { FormAddressPage } from './../form-address/form-address';
 import { CompletePage } from './../complete/complete';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { CheckoutModel } from './checkout.model';
 
 /**
  * Generated class for the CheckoutPage page.
@@ -63,6 +64,12 @@ export class CheckoutPage {
   getShippingData() {
     setTimeout(() => {
       this.shipping = this.cartService.getCartStorage();
+      console.log(this.shipping);
+      // if(product.shippings){
+      //   product.shippings.forEach(e => {
+      //     product.shippings.push(e.shippingtype);
+      //   });
+      // }
     }, 1000);
   }
   getAddressData() {
