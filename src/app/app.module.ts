@@ -97,8 +97,6 @@ import { IonFormConfirmComponent } from '../components/ion-form-confirm/ion-form
     // Checkout core
     IonFormWizardComponent,
     IonFormWizardStepComponent,
-    IonFormShippingComponent,
-    IonFormConfirmComponent,
     IonFormCreditComponent,
     IonFormCounterserviceComponent,
     // Checkout Page
@@ -106,6 +104,8 @@ import { IonFormConfirmComponent } from '../components/ion-form-confirm/ion-form
     IonFormPaymentOptionComponent,
     IonFormDeliveryComponent,
     IonFormBankComponent,
+    IonFormShippingComponent,
+    IonFormConfirmComponent,
     //pipe moment
     MomentPipe
   ],
