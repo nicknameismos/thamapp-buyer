@@ -8,6 +8,8 @@ import { IonFormBankComponent } from './ion-form-bank/ion-form-bank';
 import { IonDetailProductComponent } from './ion-detail-product/ion-detail-product';
 import { IonFormShippingComponent } from './ion-form-shipping/ion-form-shipping';
 import { IonFormConfirmComponent } from './ion-form-confirm/ion-form-confirm';
+import { IonFormWizardComponent } from './ion-form-wizard/ion-form-wizard';
+import { IonFormWizardStepComponent } from './ion-form-wizard-step/ion-form-wizard-step';
 @NgModule({
 	declarations: [ListScollXComponent,
 		PreloadImage,
@@ -17,7 +19,9 @@ import { IonFormConfirmComponent } from './ion-form-confirm/ion-form-confirm';
     IonFormBankComponent,
     IonDetailProductComponent,
     IonFormShippingComponent,
-    IonFormConfirmComponent],
+    IonFormConfirmComponent,
+    IonFormWizardComponent,
+    IonFormWizardStepComponent],
 	imports: [],
 	exports: [ListScollXComponent,
 		PreloadImage,
@@ -27,6 +31,8 @@ import { IonFormConfirmComponent } from './ion-form-confirm/ion-form-confirm';
     IonFormBankComponent,
     IonDetailProductComponent,
     IonFormShippingComponent,
-    IonFormConfirmComponent]
+    IonFormConfirmComponent,
+    IonFormWizardComponent,
+    IonFormWizardStepComponent]
 })
 export class ComponentsModule { }

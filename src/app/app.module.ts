@@ -20,7 +20,21 @@ import { PreloadImage } from '../components/preload-image/preload-image';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
-import { EcommerceCoreModule, IonIconSearchbarComponent, IonListGridComponent, IonFormProfileComponent, IonListCartComponent, IonListProductComponent, IonFormReviewComponent, IonFormWizardComponent, IonFormWizardStepComponent, IonFormCreditComponent, IonFormCounterserviceComponent, IonListShopComponent, IonDetailShopComponent, IonBackgroundImageComponent, OmiseService } from "@ngcommerce/core";
+import {
+  EcommerceCoreModule,
+  IonIconSearchbarComponent,
+  IonListGridComponent,
+  IonFormProfileComponent,
+  IonListCartComponent,
+  IonListProductComponent,
+  IonFormReviewComponent,
+  IonFormCreditComponent,
+  IonFormCounterserviceComponent,
+  IonListShopComponent,
+  IonDetailShopComponent,
+  IonBackgroundImageComponent,
+  OmiseService
+} from "@ngcommerce/core";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -53,6 +67,8 @@ import { Facebook } from '@ionic-native/facebook';
 import { IonDetailProductComponent } from '../components/ion-detail-product/ion-detail-product';
 import { IonFormShippingComponent } from '../components/ion-form-shipping/ion-form-shipping';
 import { IonFormConfirmComponent } from '../components/ion-form-confirm/ion-form-confirm';
+import { IonFormWizardComponent } from '../components/ion-form-wizard/ion-form-wizard';
+import { IonFormWizardStepComponent } from '../components/ion-form-wizard-step/ion-form-wizard-step';
 
 @NgModule({
   declarations: [
@@ -95,11 +111,11 @@ import { IonFormConfirmComponent } from '../components/ion-form-confirm/ion-form
     IonFormProfileComponent,
 
     // Checkout core
-    IonFormWizardComponent,
-    IonFormWizardStepComponent,
     IonFormCreditComponent,
     IonFormCounterserviceComponent,
     // Checkout Page
+    IonFormWizardComponent,
+    IonFormWizardStepComponent,
     IonFormPaymentComponent,
     IonFormPaymentOptionComponent,
     IonFormDeliveryComponent,
