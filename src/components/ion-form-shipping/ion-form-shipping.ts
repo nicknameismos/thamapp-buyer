@@ -39,7 +39,14 @@ export class IonFormShippingComponent {
     this.createAddress.emit('push model');
   }
 
-  setproduct(product, shipping) {
+  setproduct(product, ship) {
+    var shipping = {
+      name: ship.shippingtype.name,
+      detail: ship.shippingtype.detail,
+      price: ship.shippingprice
+    }
+    console.log(ship);
+    console.log(shipping);
     var checkProduct = false;
     if (this.data.order.items && this.data.order.items.length > 0) {
       // console.log('+++++++++++++++++++++++++++++++++');
